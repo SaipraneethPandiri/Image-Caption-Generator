@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Image Caption Generator</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background-color: #AAC8A7;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #E9FFC2;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+            border-radius: 5px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        h2 {
+            color: #333;
+            margin-top: 20px;
+        }
+
+        input[type="file"] {
+            display: none;
+        }
+
+        label.upload-label {
+            display: block;
+            text-align: center;
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 3px;
+            transition: background-color 0.3s ease;
+        }
+
+        label.upload-label:hover {
+            background-color: #45a049;
+        }
+
+        #uploadedImage {
+            max-width: 100%;
+            margin-top: 10px;
+        }
+
+        #captionText {
+            margin-top: 10px;
+            color: #555;
+        }
+
+        .loader {
+            display: none;
+            width: 40px;
+            height: 40px;
+            margin: 20px auto;
+            border-radius: 50%;
+            border: 5px solid #f3f3f3;
+            border-top: 5px solid #3498db;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .show-results {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="/upload" method="post" enctype="multipart/form-data">
+        <input type="file" name="image" accept="image/*" required>
+        <button type="submit">Generate Caption</button>
+    </form>
+    {% if message %}
+    <p>{{ message }}</p>
+    {% endif %}
+    
+    {% if caption %}
+    <h2>Caption:</h2>
+    <p>{{ caption }}</p>
+    {% endif %}
+    <div class="container">
+        <h1>Image Caption Generator</h1>
+        <div>
+            <input type="file" id="imageUpload" accept="image/*">
+            <label for="imageUpload" class="upload-label">Upload Image</label>
+        </div>
+        <div class="loader"></div>
+        <h2 id="captionHeading" class="show-results">Image Caption:</h2>
+        <img id="uploadedImage" class="show-results">
+        <h2 id="cap">Generated Caption</h2>
+        <p id="captionText" class="show-results"></p>
+    </div>
+
+</body>
+
+</html>
