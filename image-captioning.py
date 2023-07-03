@@ -11,7 +11,7 @@ app = Flask(__name__)
 
 # Load the pre-trained model and tokenizer
 model = load_model('best_model.h5')
-tokenizer = pickle.load(open('tokenizer.pkl', 'rb'))
+tokenizer = pickle.load(open('features.pkl', 'rb'))
 
 # Load the VGG16 model
 vgg_model = VGG16(weights='mobilenet_1_0_224_tf.hs')
