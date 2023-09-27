@@ -1,5 +1,5 @@
 # Image-caption-generator
-- Video Presenattion  [link](https://drive.google.com/file/d/1XIgOtXC8YffzHW9qkU22GHfzThL-SPGj/view?usp=sharing)
+- Video Presentation  [link](https://drive.google.com/file/d/1XIgOtXC8YffzHW9qkU22GHfzThL-SPGj/view?usp=sharing)
 
 ## Preview of the project
 
